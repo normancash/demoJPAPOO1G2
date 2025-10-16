@@ -1,12 +1,15 @@
 package model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name="Sucursal")
+@NamedQueries(
+        {
+            @NamedQuery(name="Sucursal.findAll"
+                    ,query = "SELECT s FROM Sucursal s")
+        }
+)
 public class Sucursal {
     @Id
     private Integer id;
